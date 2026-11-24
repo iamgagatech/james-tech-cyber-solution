@@ -315,99 +315,78 @@ button {
   color: var(--teal);
 }
 .hero-art {
-  height: 450px;
+  height: 486px;
   position: relative;
   display: grid;
   place-items: center;
   z-index: 1;
 }
-.art-orbit,
-.art-ring {
+.art-orbit {
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(54, 182, 160, 0.17);
 }
 .orbit-one {
-  width: 390px;
-  height: 390px;
+  width: 430px;
+  height: 430px;
   border-style: dashed;
   animation: slow-rotate 60s linear infinite;
 }
 .orbit-two {
-  width: 330px;
-  height: 330px;
+  width: 360px;
+  height: 360px;
   border-color: #d5b77a24;
 }
-.ring-one {
-  width: 265px;
-  height: 265px;
-  border-color: #36b6a033;
-}
-.ring-two {
-  width: 195px;
-  height: 195px;
-  border-color: #ffffff1c;
-}
-.art-shield {
-  width: 137px;
-  height: 153px;
-  border: 1px solid rgba(54, 182, 160, 0.42);
-  color: var(--teal);
-  display: grid;
-  place-items: center;
-  background: #101c2c99;
-  clip-path: polygon(
-    50% 0,
-    94% 17%,
-    92% 55%,
-    78% 80%,
-    50% 100%,
-    22% 80%,
-    8% 55%,
-    6% 17%
-  );
-  filter: drop-shadow(0 0 22px rgba(54, 182, 160, 0.22));
+.photo {
   position: relative;
+  overflow: hidden;
+  background: #101c2c;
 }
-.art-shield:before {
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.hero-photo-frame {
+  position: relative;
+  width: min(340px, 82%);
+  aspect-ratio: 4 / 5;
+  padding: 9px;
+  border: 1px solid rgba(54, 182, 160, 0.3);
+  background: #101c2c66;
+  box-shadow: 0 24px 60px #04080f66;
+}
+.hero-photo-frame .photo {
+  width: 100%;
+  height: 100%;
+}
+.hero-photo-frame:before,
+.hero-photo-frame:after {
   content: "";
   position: absolute;
-  top: 8px;
-  right: 8px;
-  bottom: 8px;
-  left: 8px;
-  border: 1px solid rgba(213, 183, 122, 0.35);
-  clip-path: polygon(
-    50% 0,
-    94% 17%,
-    92% 55%,
-    78% 80%,
-    50% 100%,
-    22% 80%,
-    8% 55%,
-    6% 17%
-  );
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--champagne);
+  opacity: 0.7;
+  pointer-events: none;
 }
-.art-node {
-  width: 8px;
-  height: 8px;
-  background: var(--champagne);
-  border-radius: 50%;
-  position: absolute;
-  box-shadow: 0 0 0 6px #d5b77a1a;
+.hero-photo-frame:before {
+  left: -1px;
+  top: -1px;
+  border-right: 0;
+  border-bottom: 0;
 }
-.node-a {
-  top: 86px;
-  right: 102px;
+.hero-photo-frame:after {
+  right: -1px;
+  bottom: -1px;
+  border-left: 0;
+  border-top: 0;
 }
-.node-b {
-  bottom: 84px;
-  left: 90px;
-}
-.node-c {
-  top: 46%;
-  right: 30px;
-  background: var(--teal);
+.coord-top {
+  top: -22px;
+  right: -2px;
 }
 .art-coord {
   position: absolute;
@@ -415,18 +394,45 @@ button {
   letter-spacing: 1.2px;
   color: #82939c;
 }
-.coord-top {
-  top: 33px;
-  right: 10px;
-}
-.coord-bottom {
-  bottom: 32px;
+.hero-photo-badge {
+  position: absolute;
   left: 0;
+  bottom: 44px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 16px 12px 12px;
+  background: #0f2431f2;
+  border: 1px solid rgba(54, 182, 160, 0.32);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.hero-photo-badge-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: var(--teal);
+  background: #36b6a01c;
+}
+.hero-photo-badge span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.hero-photo-badge b {
+  font: 600 12px var(--heading);
+  color: #fff;
+}
+.hero-photo-badge small {
+  font-size: 9px;
+  color: #9eafb9;
 }
 .art-dot-grid {
   position: absolute;
   right: 1px;
-  bottom: 85px;
+  bottom: 8px;
   width: 61px;
   height: 50px;
   background-image: radial-gradient(
@@ -496,12 +502,26 @@ button {
   border-bottom: 1px solid var(--line);
 }
 .challenge-item {
-  padding: 31px 38px 33px 0;
+  padding: 30px 38px 33px 0;
   position: relative;
 }
 .challenge-item + .challenge-item {
   padding-left: 38px;
   border-left: 1px solid var(--line);
+}
+.challenge-item .photo {
+  margin-bottom: 26px;
+  border: 1px solid #e2e8ea;
+}
+.challenge-item .photo img {
+  filter: saturate(0.94);
+  transition: transform 0.5s ease;
+}
+.challenge-item:hover .photo img {
+  transform: scale(1.03);
+}
+.challenge-copy {
+  position: relative;
 }
 .challenge-index,
 .mono-label {
@@ -509,11 +529,11 @@ button {
   color: #75848c;
   letter-spacing: 1px;
 }
-.challenge-item > svg {
+.challenge-copy > svg {
   display: block;
   color: #247e78;
-  margin: 27px 0 15px;
-  width: 23px;
+  margin: 18px 0 13px;
+  width: 22px;
 }
 .challenge-item h3 {
   font: 600 19px var(--heading);
@@ -552,7 +572,8 @@ button {
   z-index: 1;
 }
 .intro-symbol {
-  height: 230px;
+  height: auto;
+  min-height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -560,29 +581,15 @@ button {
   gap: 22px;
   border-right: 1px solid rgba(255, 255, 255, 0.13);
 }
-.intro-symbol > div {
-  width: 130px;
-  height: 145px;
-  border: 1px solid rgba(54, 182, 160, 0.5);
-  display: grid;
-  place-items: center;
-  position: relative;
-  color: var(--teal);
-  clip-path: polygon(
-    50% 0,
-    94% 17%,
-    92% 55%,
-    78% 80%,
-    50% 100%,
-    22% 80%,
-    8% 55%,
-    6% 17%
-  );
+.intro-symbol .intro-photo {
+  width: min(300px, 100%);
+  padding: 8px;
+  border: 1px solid rgba(54, 182, 160, 0.42);
+  background: #0d2531b3;
+  box-shadow: 0 20px 50px #05111a59;
 }
-.intro-symbol > div span {
-  position: absolute;
-  font: 600 14px var(--mono);
-  color: var(--champagne);
+.intro-symbol .intro-photo .photo img {
+  object-position: 50% 35%;
 }
 .intro-symbol .mono-label {
   color: #a1b2bb;
@@ -1203,19 +1210,25 @@ button {
 }
 .about-intro {
   display: grid;
-  grid-template-columns: 1fr 0.8fr;
-  gap: 95px;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 72px;
   align-items: center;
   margin-bottom: 62px;
 }
 .about-intro h2 {
   font-size: 38px;
 }
-.about-intro > p {
+.about-intro p {
   font-size: 13px;
   line-height: 1.9;
   color: var(--muted);
-  margin: 0;
+  margin: 22px 0 0;
+}
+.about-intro-photo {
+  padding: 9px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 22px 55px #101c2c12;
 }
 .mission-grid {
   display: grid;
@@ -1295,10 +1308,21 @@ button {
   gap: 15px;
 }
 .service-detail-card {
-  padding: 27px 30px 28px;
+  padding: 0 30px 28px;
   border: 1px solid var(--line);
   background: #fff;
   min-height: 302px;
+  overflow: hidden;
+}
+.service-detail-photo {
+  margin: 0 -30px 24px;
+  background: #0d1a26;
+}
+.service-detail-photo img {
+  transition: transform 0.6s ease;
+}
+.service-detail-card:hover .service-detail-photo img {
+  transform: scale(1.04);
 }
 .service-detail-top {
   display: flex;
@@ -1445,6 +1469,16 @@ button {
   color: var(--muted);
   line-height: 1.8;
 }
+.approach-photo {
+  margin-top: 24px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 18px 45px #101c2c10;
+}
+.approach-photo .photo img {
+  object-position: 50% 30%;
+}
 .consultation-badge {
   display: inline-flex;
   align-items: center;
@@ -1587,6 +1621,14 @@ button {
   line-height: 1.85;
   color: var(--muted);
 }
+.contact-photo {
+  margin: 6px 0 22px;
+  border: 1px solid #dfe6e8;
+  background: #fff;
+  padding: 7px;
+  box-shadow: 0 16px 36px #101c2c0f;
+}
+
 .contact-facts {
   display: flex;
   flex-direction: column;
@@ -2039,12 +2081,28 @@ button {
     font-size: 10px;
   }
   .hero-art {
-    height: 300px;
+    height: auto;
     max-width: 440px;
     width: 100%;
-    margin: 5px auto 0;
-    transform: scale(0.82);
-    transform-origin: center;
+    margin: 34px auto 46px;
+  }
+  .orbit-one {
+    width: 340px;
+    height: 340px;
+  }
+  .orbit-two {
+    width: 290px;
+    height: 290px;
+  }
+  .hero-photo-frame {
+    width: min(300px, 88%);
+  }
+  .hero-photo-badge {
+    bottom: -18px;
+    left: 4px;
+  }
+  .art-dot-grid {
+    display: none;
   }
   .hero-bottom {
     padding-bottom: 20px;
@@ -2079,15 +2137,21 @@ button {
   }
   .challenge-item,
   .challenge-item + .challenge-item {
-    padding: 24px 0;
+    padding: 24px 0 26px;
     border-left: 0;
     border-bottom: 1px solid var(--line);
+  }
+  .challenge-item .photo {
+    margin-bottom: 20px;
+  }
+  .challenge-item .photo img {
+    max-height: 230px;
   }
   .challenge-item:last-child {
     border-bottom: 0;
   }
-  .challenge-item > svg {
-    margin: 20px 0 12px;
+  .challenge-copy > svg {
+    margin: 15px 0 11px;
   }
   .challenge-item p {
     max-width: 460px;
@@ -2105,12 +2169,8 @@ button {
     border-right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   }
-  .intro-symbol > div {
-    width: 94px;
-    height: 105px;
-  }
-  .intro-symbol > div svg {
-    width: 56px;
+  .intro-symbol .intro-photo {
+    width: min(340px, 100%);
   }
   .intro-copy h2 {
     font-size: 36px;
@@ -2280,8 +2340,11 @@ button {
   }
   .about-intro {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 26px;
     margin-bottom: 35px;
+  }
+  .about-intro-photo {
+    order: -1;
   }
   .about-intro h2 {
     font-size: 34px;
@@ -2309,8 +2372,11 @@ button {
     grid-template-columns: 1fr;
   }
   .service-detail-card {
-    padding: 23px;
+    padding: 0 23px 23px;
     min-height: 0;
+  }
+  .service-detail-photo {
+    margin: 0 -23px 20px;
   }
   .service-detail-card ul {
     grid-template-columns: 1fr;
@@ -2438,9 +2504,22 @@ button {
     justify-content: center;
   }
   .hero-art {
-    transform: scale(0.72);
-    height: 270px;
-    margin: -8px auto -5px;
+    height: auto;
+    margin: 26px auto 40px;
+  }
+  .hero-photo-frame {
+    width: min(255px, 92%);
+  }
+  .orbit-one {
+    width: 285px;
+    height: 285px;
+  }
+  .orbit-two {
+    width: 240px;
+    height: 240px;
+  }
+  .hero-photo-badge {
+    padding: 10px 13px 10px 10px;
   }
   .hero-scroll {
     font-size: 7px;
