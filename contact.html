@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Aether365 | Microsoft 365 Support Inquiry</title>
+    <meta name="description" content="Contact Aether365 for Microsoft 365 migration, support, or managed services. U.S.-based team ready to help.">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo">Aether<span>365</span></a>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="portal.php" class="btn-nav">Client Portal</a>
+        </nav>
+        <button class="mobile-toggle">☰</button>
+    </div>
+</header>
+
+<section class="page-header">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Tell us about your Microsoft 365 needs. We respond within one business day.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="contact-wrapper">
+            <form action="contact.php" method="POST" class="contact-form" id="supportForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" placeholder="Your Company LLC">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Work Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Needed *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service...</option>
+                        <option value="Migration">Microsoft 365 Migration</option>
+                        <option value="Break/Fix">Break / Fix Support</option>
+                        <option value="Security">Security & Compliance</option>
+                        <option value="Managed">Managed Microsoft 365 Support</option>
+                        <option value="Training">User Training</option>
+                        <option value="Audit">Tenant Health / Audit</option>
+                        <option value="Other">Other / General Inquiry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">How can we help? *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Describe your current environment or the issue you're facing..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
+                <p class="form-note">We respect your privacy and will only use this information to respond to your inquiry.</p>
+            </form>
+
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><strong>Email</strong><br><a href="mailto:support@aether365.com">support@aether365.com</a></p>
+                <p><strong>Phone</strong><br><a href="tel:+18005550199">+1 (800) 555-0199</a></p>
+                <p><strong>Business Hours</strong><br>Monday – Friday<br>8:00 AM – 6:00 PM Eastern</p>
+                <p><strong>Coverage</strong><br>All 50 United States</p>
+                <div class="info-box">
+                    <strong>Existing Clients</strong>
+                    <p>Please log in to the <a href="portal.php">Client Portal</a> to open or track support tickets for faster service.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Aether<span>365</span></a>
+                <p>Professional Microsoft 365 and Office 365 IT support for businesses across the United States.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <a href="services.html">Migration</a>
+                <a href="services.html">Managed Support</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="portal.php">Client Portal</a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Aether365 Support LLC. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="assets/script.js"></script>
+</body>
+</html>
