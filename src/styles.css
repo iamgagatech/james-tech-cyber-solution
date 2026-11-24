@@ -343,9 +343,6 @@ button {
   background: #fff;
   border: 1px solid #e6ecee;
 }
-.photo img[src$=".svg"] {
-  object-fit: cover;
-}
 .photo img {
   display: block;
   width: 100%;
@@ -359,7 +356,7 @@ button {
   aspect-ratio: 4 / 5;
   padding: 9px;
   border: 1px solid rgba(54, 182, 160, 0.38);
-  background: #ffffff14;
+  background: #101c2c66;
   box-shadow: 0 24px 60px #04080f4d;
 }
 .hero-photo-frame .photo {
@@ -513,29 +510,16 @@ button {
   padding-left: 38px;
   border-left: 1px solid var(--line);
 }
-.challenge-item .photo {
-  margin-bottom: 26px;
-  border: 1px solid #e2e8ea;
-}
-.challenge-item .photo img {
-  transition: transform 0.5s ease;
-}
-.challenge-item:hover .photo img {
-  transform: scale(1.03);
-}
-.challenge-copy {
-  position: relative;
-}
 .mono-label {
   font: 10px var(--mono);
   color: #75848c;
   letter-spacing: 1px;
 }
-.challenge-copy > svg {
+.challenge-item > svg {
   display: block;
   color: #247e78;
-  margin: 18px 0 13px;
-  width: 22px;
+  margin: 22px 0 13px;
+  width: 23px;
 }
 .challenge-item h3 {
   font: 600 19px var(--heading);
@@ -583,15 +567,29 @@ button {
   gap: 22px;
   border-right: 1px solid rgba(255, 255, 255, 0.13);
 }
-.intro-symbol .intro-photo {
-  width: min(300px, 100%);
-  padding: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: #ffffff0f;
-  box-shadow: 0 20px 50px #05111a59;
+.intro-symbol .intro-mark {
+  width: 130px;
+  height: 145px;
+  border: 1px solid rgba(54, 182, 160, 0.5);
+  display: grid;
+  place-items: center;
+  position: relative;
+  color: var(--teal);
+  clip-path: polygon(
+    50% 0,
+    94% 17%,
+    92% 55%,
+    78% 80%,
+    50% 100%,
+    22% 80%,
+    8% 55%,
+    6% 17%
+  );
 }
-.intro-symbol .intro-photo .photo img {
-  object-position: 50% 35%;
+.intro-symbol .intro-mark span {
+  position: absolute;
+  font: 600 14px var(--mono);
+  color: var(--champagne);
 }
 .intro-symbol .mono-label {
   color: #a1b2bb;
@@ -1284,27 +1282,15 @@ button {
   gap: 15px;
 }
 .service-detail-card {
-  padding: 0 30px 28px;
+  padding: 27px 30px 28px;
   border: 1px solid var(--line);
   background: #fff;
   min-height: 302px;
   overflow: hidden;
 }
-.service-detail-photo {
-  margin: 0 -30px 24px;
-  background: #fff;
-  border: 0;
-  border-bottom: 1px solid #e6ecee;
-}
-.service-detail-photo img {
-  transition: transform 0.6s ease;
-}
-.service-detail-card:hover .service-detail-photo img {
-  transform: scale(1.04);
-}
 .service-detail-top {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   color: #337c77;
 }
@@ -2107,17 +2093,11 @@ button {
     border-left: 0;
     border-bottom: 1px solid var(--line);
   }
-  .challenge-item .photo {
-    margin-bottom: 20px;
-  }
-  .challenge-item .photo img {
-    max-height: 230px;
-  }
   .challenge-item:last-child {
     border-bottom: 0;
   }
-  .challenge-copy > svg {
-    margin: 15px 0 11px;
+  .challenge-item > svg {
+    margin: 16px 0 11px;
   }
   .challenge-item p {
     max-width: 460px;
@@ -2135,8 +2115,12 @@ button {
     border-right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   }
-  .intro-symbol .intro-photo {
-    width: min(340px, 100%);
+  .intro-symbol .intro-mark {
+    width: 96px;
+    height: 107px;
+  }
+  .intro-symbol .intro-mark svg {
+    width: 56px;
   }
   .intro-copy h2 {
     font-size: 36px;
@@ -2338,11 +2322,8 @@ button {
     grid-template-columns: 1fr;
   }
   .service-detail-card {
-    padding: 0 23px 23px;
+    padding: 23px;
     min-height: 0;
-  }
-  .service-detail-photo {
-    margin: 0 -23px 20px;
   }
   .service-detail-card ul {
     grid-template-columns: 1fr;
