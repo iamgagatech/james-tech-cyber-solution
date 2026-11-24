@@ -1083,6 +1083,20 @@ button {
   font-size: 10px;
   color: var(--muted);
 }
+.reviews-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.reviews-footer .reviews-note {
+  margin: 0;
+}
+.reviews-footer .text-link {
+  font-size: 12px;
+}
 .reviews-note {
   margin: 20px 0 0;
   font: 10px var(--mono);

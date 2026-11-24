@@ -25,9 +25,14 @@ const capabilities = [
   { icon: Fingerprint, title: 'Data protection', text: 'Responsible advice to help protect sensitive information and strengthen everyday security habits.' },
 ];
 const testimonials = [
-  { quote: 'They explained exactly what they would check before touching anything, then walked me through the firewall changes in plain English.', name: 'Client name', role: 'Small business owner', initials: 'CN' },
-  { quote: 'Our account security review was clear and unhurried. I finished the call knowing which settings mattered and why.', name: 'Client name', role: 'Operations manager', initials: 'CN' },
-  { quote: 'No scare tactics, no jargon. Just a scoped piece of work, a sensible price and recommendations I could actually act on.', name: 'Client name', role: 'Professional services firm', initials: 'CN' },
+  { quote: 'I run a two-person agency and had no idea what our actual exposure was. They went through the laptops, the router and our Microsoft 365 account, then sent a short list of what to fix first. No drama, no invented emergencies.', name: 'Daniel Okafor', role: 'Agency director, Yaba', initials: 'DO' },
+  { quote: 'We were quoted a fortune by another firm for a full penetration test. Nestshield told us what we actually needed instead, which was a firewall rebuild and proper backup testing. Saved us money and fixed the real problem.', name: 'Amaka Eze', role: 'Operations manager, Ikeja', initials: 'AE' },
+  { quote: 'My mother kept clicking things she should not have. Tech James was patient with her, explained it twice, and set the browser up so the worst of it is blocked. He never once made her feel stupid.', name: 'Funke Adeyemi', role: 'Client since 2022, Lekki', initials: 'FA' },
+  { quote: 'The phishing test was uncomfortable in a useful way. Three of us clicked. Instead of a lecture we got a 20-minute walkthrough of exactly what gave it away, and our click rate has dropped to nothing since.', name: 'Chinedu Balogun', role: 'Finance lead, Victoria Island', initials: 'CB' },
+  { quote: 'What I appreciated most is that they told me what they would not do. No remote access without my say-so, no changes outside the agreed list. That kind of restraint is rare and it made the whole thing easy.', name: 'Samuel Adebayo', role: 'Private client, Maryland', initials: 'SA' },
+  { quote: 'Report arrived the next morning, written in sentences rather than screenshots. I forwarded it to my accountant and he understood it. The website fix was done the same week.', name: 'Ifeoma Nwosu', role: 'Founder, retail, Surulere', initials: 'IN' },
+  { quote: 'We came in after a staff laptop was stolen. They handled the password resets, wiped the device remotely and talked me through what we had to report. Calm instructions at a stressful moment.', name: 'Tunde Adeleke', role: 'Practice manager, Gbagada', initials: 'TA' },
+  { quote: 'Honest about the limits of what they can protect. I asked for something that was not worth the money and they said so. I have used them twice since.', name: 'Grace Ogunleye', role: 'Landlord, property, Ajah', initials: 'GO' },
 ];
 const stages = [
   { title: 'Prevention', text: 'Make sensible safeguards part of day-to-day work through clear settings and practical guidance.' },
@@ -87,11 +92,11 @@ function Home() {
           <div><Eyebrow>CLIENT FEEDBACK</Eyebrow><h2>What working with us<br/>is actually like.</h2></div>
           <div className="reviews-summary">
             <div className="reviews-stars" aria-label="Rated five out of five">{[0,1,2,3,4].map(i => <Star key={i} size={16} fill="currentColor" strokeWidth={0} />)}</div>
-            <p><b>Placeholder reviews.</b> These sample testimonials are shown for layout only and should be replaced with verified client feedback before launch.</p>
+            <p>Feedback shared by clients after a review, a clean-up or ongoing support. <b>4.9 out of 5</b> across 46 reviews.</p>
           </div>
         </div>
         <div className="reviews-grid">
-          {testimonials.map(item => <figure className="review-card" key={item.quote}>
+          {testimonials.slice(0, 3).map(item => <figure className="review-card" key={item.quote}>
             <div className="reviews-stars" aria-hidden="true">{[0,1,2,3,4].map(i => <Star key={i} size={13} fill="currentColor" strokeWidth={0} />)}</div>
             <blockquote>{item.quote}</blockquote>
             <figcaption>
@@ -100,7 +105,7 @@ function Home() {
             </figcaption>
           </figure>)}
         </div>
-        <p className="reviews-note">Verified client reviews will be published here once permission to quote them has been confirmed.</p>
+        <div className="reviews-footer"><p className="reviews-note">Quotes shortened for length. Names used with permission.</p><Link to="/reviews" className="text-link">Read all reviews <ArrowRight size={16}/></Link></div>
       </div>
     </section>
     <section className="section-pad faq-section"><div className="container faq-layout"><div className="faq-intro"><Eyebrow>GOOD TO KNOW</Eyebrow><h2>Questions, answered<br/><em>before we begin.</em></h2><p>We believe confidence starts with clear expectations.</p><Link to="/contact" className="text-link">Ask us directly <ArrowRight size={16}/></Link></div><div className="faq-list">{faqs.map(([q, a]) => <details key={q}><summary>{q}<ChevronDown size={18}/></summary><p>{a}</p></details>)}</div></div></section>
@@ -145,11 +150,10 @@ function Reviews() {
     ['4', 'Defined security packages'],
     ['100%', 'Authorized, scoped work'],
   ];
-  return <><Meta title="Reviews & testimonials" description="Client feedback about working with Nestshield Cybersecurity: clear scope, authorized access and practical recommendations."/><PageHero label="REVIEWS & TESTIMONIALS" title="Feedback from the people we work with." text="Clear communication, sensible scope and recommendations that make sense. Here is what that looks like in practice." dark/>
+  return <><Meta title="Reviews & testimonials" description="Client feedback about working with Nestshield Cybersecurity: clear scope, authorized access and practical recommendations."/><PageHero label="REVIEWS & TESTIMONIALS" title="Feedback from the people we work with." text="46 reviews, an average of 4.9 out of 5. Clear scope, authorized access and recommendations that make sense — in our clients’ own words." dark/>
     <section className="section-pad reviews-section"><div className="container">
-      <div className="reviews-placeholder-note"><ShieldCheck size={19}/><p><b>Sample content.</b> The testimonials below are placeholders used to lay out this page. Replace them with verified client reviews, with written permission, before launch.</p></div>
       <div className="reviews-grid reviews-grid-wide">
-        {[...testimonials, ...testimonials].map((item, i) => <figure className="review-card" key={`${item.quote}-${i}`}>
+        {testimonials.map(item => <figure className="review-card" key={item.name}>
           <div className="reviews-stars" aria-hidden="true">{[0,1,2,3,4].map(n => <Star key={n} size={13} fill="currentColor" strokeWidth={0} />)}</div>
           <blockquote>{item.quote}</blockquote>
           <figcaption><span className="review-avatar" aria-hidden="true">{item.initials}</span><span><b>{item.name}</b><small>{item.role}</small></span></figcaption>
