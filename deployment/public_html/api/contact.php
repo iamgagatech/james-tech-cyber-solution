@@ -53,11 +53,11 @@ if ($recipient === '' || !filter_var($recipient, FILTER_VALIDATE_EMAIL)) {
 }
 
 $subject = 'Website consultation request — ' . preg_replace('/[\r\n]+/', ' ', $data['name']);
-$body = "New consultation request from the James-Tech Cyber Solution website\n\n";
+$body = "New consultation request from the Nestshield Cybersecurity website\n\n";
 $labels = ['name' => 'Full name', 'business' => 'Business / organization', 'email' => 'Email', 'phone' => 'Phone', 'service' => 'Service / package', 'date' => 'Preferred date', 'method' => 'Consultation method', 'concern' => 'Concern'];
 foreach ($labels as $key => $label) $body .= $label . ': ' . ($data[$key] !== '' ? $data[$key] : 'Not provided') . "\n";
 $headers = "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\n";
-$headers .= 'From: James-Tech Website <' . $recipient . ">\r\n";
+$headers .= 'From: Nestshield Website <' . $recipient . ">\r\n";
 $headers .= 'Reply-To: ' . str_replace(["\r", "\n"], '', $data['email']) . "\r\n";
 if (!function_exists('mail') || !@mail($recipient, $subject, $body, $headers)) {
     respond(503, ['ok' => false, 'message' => 'Enquiry delivery is temporarily unavailable. Please try again later.']);

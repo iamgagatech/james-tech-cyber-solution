@@ -1,4 +1,4 @@
-# James-Tech Cyber Solution
+# Nestshield Cybersecurity
 
 Complete responsive React + TypeScript website with React Router, Vite, Framer Motion, Lucide icons, page metadata, a cPanel SPA rewrite, and a PHP consultation endpoint.
 
@@ -35,7 +35,7 @@ Edit **`public/business-config.json`** before building (or edit the deployed `bu
 
 ```json
 {
-  "businessName": "JAMES-TECH CYBER SOLUTION",
+  "businessName": "Nestshield Cybersecurity",
   "businessEmail": "BUSINESS_EMAIL_PLACEHOLDER",
   "zoomBookingUrl": ""
 }
