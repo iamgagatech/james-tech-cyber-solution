@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Replace YOUR-DOMAIN-HERE with the production domain before submitting to search engines. -->
+  <url><loc>https://YOUR-DOMAIN-HERE/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://YOUR-DOMAIN-HERE/about</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://YOUR-DOMAIN-HERE/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://YOUR-DOMAIN-HERE/packages</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://YOUR-DOMAIN-HERE/approach</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://YOUR-DOMAIN-HERE/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://YOUR-DOMAIN-HERE/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://YOUR-DOMAIN-HERE/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
