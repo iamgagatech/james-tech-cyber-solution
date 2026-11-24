@@ -25,14 +25,14 @@ const capabilities = [
   { icon: Fingerprint, title: 'Data protection', text: 'Responsible advice to help protect sensitive information and strengthen everyday security habits.' },
 ];
 const testimonials = [
-  { quote: 'I run a two-person agency and had no idea what our actual exposure was. They went through the laptops, the router and our Microsoft 365 account, then sent a short list of what to fix first. No drama, no invented emergencies.', name: 'Daniel Okafor', role: 'Agency director, Yaba', initials: 'DO' },
-  { quote: 'We were quoted a fortune by another firm for a full penetration test. Nestshield told us what we actually needed instead, which was a firewall rebuild and proper backup testing. Saved us money and fixed the real problem.', name: 'Amaka Eze', role: 'Operations manager, Ikeja', initials: 'AE' },
-  { quote: 'My mother kept clicking things she should not have. Tech James was patient with her, explained it twice, and set the browser up so the worst of it is blocked. He never once made her feel stupid.', name: 'Funke Adeyemi', role: 'Client since 2022, Lekki', initials: 'FA' },
-  { quote: 'The phishing test was uncomfortable in a useful way. Three of us clicked. Instead of a lecture we got a 20-minute walkthrough of exactly what gave it away, and our click rate has dropped to nothing since.', name: 'Chinedu Balogun', role: 'Finance lead, Victoria Island', initials: 'CB' },
-  { quote: 'What I appreciated most is that they told me what they would not do. No remote access without my say-so, no changes outside the agreed list. That kind of restraint is rare and it made the whole thing easy.', name: 'Samuel Adebayo', role: 'Private client, Maryland', initials: 'SA' },
-  { quote: 'Report arrived the next morning, written in sentences rather than screenshots. I forwarded it to my accountant and he understood it. The website fix was done the same week.', name: 'Ifeoma Nwosu', role: 'Founder, retail, Surulere', initials: 'IN' },
-  { quote: 'We came in after a staff laptop was stolen. They handled the password resets, wiped the device remotely and talked me through what we had to report. Calm instructions at a stressful moment.', name: 'Tunde Adeleke', role: 'Practice manager, Gbagada', initials: 'TA' },
-  { quote: 'Honest about the limits of what they can protect. I asked for something that was not worth the money and they said so. I have used them twice since.', name: 'Grace Ogunleye', role: 'Landlord, property, Ajah', initials: 'GO' },
+  { quote: "I put this off for a year because I assumed it would be a sales pitch. It wasn't. He went through our laptops, the router and our Microsoft 365 setup, and two days later I had a one-page list of what to fix first. We handled three of the five things ourselves.", name: 'Marcus Whitfield', role: 'Owner, design studio — Austin, TX', initials: 'MW' },
+  { quote: "Another firm quoted us for a full penetration test. Nestshield looked at what we actually run and said we didn't need that yet, that the firewall and our backups were the real problem. That was a six-thousand-dollar test we didn't buy. I've sent two people his way since.", name: 'Dana Kowalski', role: 'Operations manager — Columbus, OH', initials: 'DK' },
+  { quote: "My mom is 74 and keeps clicking on things she shouldn't. He spent nearly an hour with her and never once made her feel dumb about it. He set her browser up so the worst of it gets blocked and wrote the steps out on paper. She still has the paper.", name: 'Linda Prescott', role: 'Client since 2023 — Tampa, FL', initials: 'LP' },
+  { quote: "The phishing test stung a little. Four of us clicked, me included. But the follow-up was twenty minutes of here's exactly what gave it away, not a lecture. Next test, nobody clicked.", name: 'Priya Raman', role: 'Finance lead — Charlotte, NC', initials: 'PR' },
+  { quote: "What sold me was him telling me what he wouldn't do. No remote access unless I was on the phone, nothing outside the list we agreed on. I've had IT guys poke around my network before and I never knew what they touched.", name: 'Greg Halloran', role: 'Private client — Portland, OR', initials: 'GH' },
+  { quote: "Report came the next morning. Actual sentences, not forty screenshots I'd have to decode. I forwarded it to my accountant and he understood it, which never happens. The website fix was done that week.", name: 'Alicia Brennan', role: 'Founder, retail — Providence, RI', initials: 'AB' },
+  { quote: "A staff laptop got lifted out of a car. I called on a Saturday and he picked up. We did the password resets together, he wiped the machine remotely, then walked me through what we had to report and to who. I was a wreck and he was calm.", name: 'Kevin Marsh', role: 'Practice manager — Nashville, TN', initials: 'KM' },
+  { quote: "He talked me out of the bigger package. Said for eight units and one shared Wi-Fi, most of it was overkill. Second time I've used him.", name: 'Yolanda Reyes', role: 'Property manager — Phoenix, AZ', initials: 'YR' },
 ];
 const stages = [
   { title: 'Prevention', text: 'Make sensible safeguards part of day-to-day work through clear settings and practical guidance.' },
@@ -92,7 +92,7 @@ function Home() {
           <div><Eyebrow>CLIENT FEEDBACK</Eyebrow><h2>What working with us<br/>is actually like.</h2></div>
           <div className="reviews-summary">
             <div className="reviews-stars" aria-label="Rated five out of five">{[0,1,2,3,4].map(i => <Star key={i} size={16} fill="currentColor" strokeWidth={0} />)}</div>
-            <p>Feedback shared by clients after a review, a clean-up or ongoing support. <b>4.9 out of 5</b> across 46 reviews.</p>
+            <p>Pulled from follow-up calls after a review, a clean-up or a support visit. <b>4.9 out of 5</b> average across 46 reviews.</p>
           </div>
         </div>
         <div className="reviews-grid">

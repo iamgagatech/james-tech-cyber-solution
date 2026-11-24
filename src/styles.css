@@ -1029,6 +1029,7 @@ button {
 }
 .review-card figcaption small {
   font-size: 10px;
+  line-height: 1.45;
   color: var(--muted);
 }
 .reviews-placeholder-note {
