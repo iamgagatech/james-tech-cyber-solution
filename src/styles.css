@@ -74,19 +74,18 @@ button {
   flex-shrink: 0;
 }
 .brand-mark {
-  width: 39px;
-  height: 42px;
+  width: 44px;
+  height: 46px;
   display: grid;
   place-items: center;
   position: relative;
-  color: var(--teal);
+  flex-shrink: 0;
 }
-.brand-check {
-  position: absolute;
-  font-size: 13px;
-  color: var(--champagne);
-  font-weight: 700;
-  top: 12px;
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(54, 182, 160, 0.22));
 }
 .brand-copy {
   display: flex;
@@ -350,6 +349,22 @@ button {
   object-fit: cover;
   object-position: 50% 50%;
 }
+.hero-emblem {
+  position: relative;
+  width: min(430px, 92%);
+  aspect-ratio: 1;
+  padding: 14px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(54, 182, 160, 0.38);
+  background: radial-gradient(circle at 50% 55%, #173b4d 0%, #101c2c 72%);
+}
+.hero-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 34px rgba(4, 8, 15, 0.42));
+}
 .hero-photo-frame {
   position: relative;
   width: min(340px, 82%);
@@ -362,6 +377,28 @@ button {
 .hero-photo-frame .photo {
   width: 100%;
   height: 100%;
+}
+.hero-emblem:before,
+.hero-emblem:after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--champagne);
+  opacity: 0.75;
+  pointer-events: none;
+}
+.hero-emblem:before {
+  left: -1px;
+  top: -1px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.hero-emblem:after {
+  right: -1px;
+  bottom: -1px;
+  border-left: 0;
+  border-top: 0;
 }
 .hero-photo-frame:before,
 .hero-photo-frame:after {
@@ -566,6 +603,12 @@ button {
   align-items: center;
   gap: 22px;
   border-right: 1px solid rgba(255, 255, 255, 0.13);
+}
+.intro-emblem {
+  width: 132px;
+  height: 132px;
+  border-radius: 22px;
+  box-shadow: 0 18px 42px rgba(5, 17, 26, 0.45);
 }
 .intro-symbol .intro-mark {
   width: 130px;
@@ -1250,6 +1293,30 @@ button {
   border: 1px solid var(--line);
   background: #f7fafa;
   max-width: 260px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.manager-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+.manager-initials {
+  position: absolute;
+  right: -14px;
+  bottom: 16px;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--champagne);
+  font: 600 14px var(--heading);
+  letter-spacing: 1px;
+  border: 2px solid #fff;
+  box-shadow: 0 8px 18px rgba(16, 28, 44, 0.18);
 }
 .manager-copy h3 {
   font: 600 26px var(--heading);
@@ -2098,8 +2165,8 @@ button {
     width: 290px;
     height: 290px;
   }
-  .hero-photo-frame {
-    width: min(300px, 88%);
+  .hero-emblem {
+    width: min(360px, 94%);
   }
   .hero-photo-badge {
     bottom: -18px;
@@ -2167,9 +2234,10 @@ button {
     border-right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   }
-  .intro-symbol .intro-mark {
+  .intro-emblem {
     width: 96px;
-    height: 107px;
+    height: 96px;
+    border-radius: 16px;
   }
   .intro-symbol .intro-mark svg {
     width: 56px;
@@ -2502,8 +2570,8 @@ button {
     height: auto;
     margin: 26px auto 40px;
   }
-  .hero-photo-frame {
-    width: min(255px, 92%);
+  .hero-emblem {
+    width: min(300px, 96%);
   }
   .orbit-one {
     width: 285px;
