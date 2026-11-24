@@ -523,7 +523,6 @@ button {
 .challenge-copy {
   position: relative;
 }
-.challenge-index,
 .mono-label {
   font: 10px var(--mono);
   color: #75848c;
@@ -652,16 +651,9 @@ button {
   transform: translateY(-5px);
   border-color: var(--teal);
 }
-.capability-index {
-  position: absolute;
-  right: 21px;
-  top: 22px;
-  color: #91a0a7;
-  font: 10px var(--mono);
-}
 .capability-card > svg {
   color: #327f79;
-  margin: 26px 0 17px;
+  margin: 4px 0 17px;
 }
 .capability-card h3 {
   font: 600 16px var(--heading);
@@ -705,14 +697,10 @@ button {
 .service-list > div {
   min-height: 65px;
   display: grid;
-  grid-template-columns: 48px 1fr 20px;
+  grid-template-columns: 1fr 20px;
   align-items: center;
   border-bottom: 1px solid var(--line);
   gap: 8px;
-}
-.service-list span {
-  font: 10px var(--mono);
-  color: #6e898a;
 }
 .service-list b {
   font: 500 13px var(--heading);
@@ -870,17 +858,6 @@ button {
 .price-featured .button-primary {
   background: var(--teal);
 }
-.package-number {
-  position: absolute;
-  top: 16px;
-  right: 17px;
-  font: 9px var(--mono);
-  color: #adb8bc;
-  opacity: 0.55;
-}
-.price-featured .package-number {
-  color: #fff;
-}
 .package-grid-compact .price-card {
   padding: 22px 18px 17px;
 }
@@ -948,13 +925,9 @@ button {
   border-left: 1px solid var(--line);
   padding-left: 25px;
 }
-.stage-card > span {
-  font: 10px var(--mono);
-  color: #398779;
-}
 .stage-card h3 {
   font: 600 16px var(--heading);
-  margin: 26px 0 10px;
+  margin: 0 0 10px;
 }
 .stage-card p {
   font-size: 11px;
@@ -1157,8 +1130,13 @@ button {
   padding-top: 17px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 22px;
   color: #83919a;
   font-size: 9px;
+}
+.photo-credit {
+  color: #6c7a83;
 }
 .page-hero {
   padding: 92px 0 82px;
@@ -1240,15 +1218,10 @@ button {
   padding: 32px 34px 35px;
   position: relative;
 }
-.mission-no {
-  font: 9px var(--mono);
-  color: #788991;
-  letter-spacing: 1px;
-}
 .mission-grid article > svg {
   display: block;
   color: #398779;
-  margin: 27px 0 12px;
+  margin: 0 0 14px;
 }
 .mission-grid h3 {
   font: 600 20px var(--heading);
@@ -1326,13 +1299,9 @@ button {
 }
 .service-detail-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   color: #337c77;
-}
-.service-detail-top span {
-  font: 10px var(--mono);
-  color: #7d898f;
 }
 .service-detail-card h3 {
   font: 600 20px var(--heading);
@@ -1505,16 +1474,8 @@ button {
   border-top: 1px solid var(--line);
 }
 .timeline-item {
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  gap: 17px;
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
-}
-.timeline-no {
-  font: 11px var(--mono);
-  color: #3c897e;
-  padding-top: 3px;
 }
 .timeline-item h3 {
   font: 600 16px var(--heading);
@@ -2184,7 +2145,7 @@ button {
     min-height: 230px;
   }
   .capability-card > svg {
-    margin: 28px 0 14px;
+    margin: 4px 0 14px;
   }
   .capability-card h3 {
     font-size: 14px;
@@ -2197,7 +2158,7 @@ button {
     gap: 38px;
   }
   .service-list > div {
-    grid-template-columns: 35px 1fr 18px;
+    grid-template-columns: 1fr 18px;
     min-height: 59px;
   }
   .service-list b {
@@ -2249,7 +2210,7 @@ button {
   }
   .stage-card h3 {
     font-size: 14px;
-    margin: 19px 0 8px;
+    margin: 0 0 8px;
   }
   .stage-card p {
     font-size: 10px;
@@ -2425,10 +2386,6 @@ button {
   }
   .approach-aside h2 {
     font-size: 34px;
-  }
-  .timeline-item {
-    grid-template-columns: 39px 1fr;
-    gap: 11px;
   }
   .client-safety {
     padding: 68px 0;
