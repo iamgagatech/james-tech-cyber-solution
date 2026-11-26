@@ -2,6 +2,10 @@
 
 Complete responsive React + TypeScript website with React Router, Vite, Framer Motion, Lucide icons, page metadata, a cPanel SPA rewrite, and a PHP consultation endpoint.
 
+**Business facts on the site (keep these accurate):** 20 years of cybersecurity experience, a free initial 15-minute video consultation, four packages at $1,500–$4,500 USD, and client reviews (46 reviews, 4.9 out of 5). The years of experience is held in one place — `EXPERIENCE_YEARS` at the top of `src/App.tsx` — and every mention on the site (hero badge, pricing note, About, footer) reads from it. Never hard-code the number in copy again; edit that one constant and rebuild.
+
+Site copy is written in plain, specific language: what gets checked, who approves it, what it costs. No stock marketing phrases, and no numbers that can't be proven from real business records.
+
 ## Run locally
 
 ```bash
@@ -17,12 +21,12 @@ The React website works in local preview. The consultation endpoint is PHP and r
 npm run build
 ```
 
-This runs TypeScript checks, builds the optimized static website into `dist/`, then copies the deployable site to **`deployment/public_html/`**. The latter folder is the compiled cPanel-ready deliverable and contains the assets, `.htaccess`, PHP endpoint, configuration, favicon, sitemap, and robots file. It does not require Node.js on the hosting server.
+This runs TypeScript checks, builds the optimized static website into `dist/`, then copies the deployable site to **`deployment/public_html/`**. That folder is the compiled cPanel-ready deliverable and contains the assets, `.htaccess`, PHP endpoint, configuration, favicon, sitemap, and robots file. It does not require Node.js on the hosting server. Always rebuild after editing `src/` or `public/` — never hand-edit files inside `deployment/public_html/`, they get overwritten.
 
 ## Deploy to ordinary cPanel hosting
 
 1. Build the website locally with `npm install` and `npm run build`.
-2. In cPanel File Manager (or SFTP), upload **the contents of `deployment/public_html/`** into your account's `public_html/` directory. Upload hidden files too—especially `.htaccess`—and preserve the `api/` folder.
+2. In cPanel File Manager (or SFTP), upload **the contents of `deployment/public_html/`** into your account's `public_html/` directory. Upload hidden files too — especially `.htaccess` — and preserve the `api/` folder.
 3. Enable HTTPS for the domain in cPanel. The rewrite supports clean React routes such as `/services` and `/contact`; Apache `mod_rewrite` is needed for direct page refreshes. Existing assets and the PHP endpoint are served directly.
 4. Replace `YOUR-DOMAIN-HERE` in `sitemap.xml` and `robots.txt` with the actual canonical domain after it is known. Submit the sitemap to search engines only after this replacement.
 5. Review `privacy` and `terms` content for the actual business, jurisdiction, data practices and applicable laws before launch.
@@ -41,7 +45,7 @@ Edit **`public/business-config.json`** before building (or edit the deployed `bu
 }
 ```
 
-- Replace `BUSINESS_EMAIL_PLACEHOLDER` with the official monitored business email. Do not leave the placeholder in production: the PHP endpoint deliberately refuses to claim successful delivery while it is unset.
+- Replace `BUSINESS_EMAIL_PLACEHOLDER` with the official monitored business email. Do not leave the placeholder in production: the PHP endpoint deliberately refuses to claim successful delivery while it is unset. **This is still outstanding — the form cannot deliver enquiries until it's set.**
 - Add the real official Zoom booking URL only if/when one is provided. The current site does not create or invent a Zoom meeting link; clients may request a Zoom call and receive details after their enquiry is reviewed.
 - Re-run `npm run build` and re-upload the deployment folder after changing source configuration. A direct edit to the deployed JSON takes effect immediately for the displayed email and PHP recipient.
 
@@ -60,17 +64,25 @@ There is no email address, phone number, office location, social account, Zoom U
 
 ## Pages and functionality
 
-- Home, About, Cybersecurity Services, Security Packages, Our Approach, Contact / Book Consultation.
-- Privacy Policy and Terms of Service pages are included and linked in the footer.
-- Responsive mobile navigation, internal routes, package-to-form links, URL query prefill, FAQs, accessible form labels/validation, loading/error/success states, reduced-motion handling, page titles/descriptions/Open Graph defaults and a custom technical shield motif.
-- Exact package prices and included items are held in one reusable data source in `src/App.tsx`.
+- **Routes:** Home (`/`), About (`/about`), Cybersecurity Services (`/services`), Security Packages (`/packages`), Reviews & Testimonials (`/reviews`), Our Approach (`/approach`), Contact / Book Consultation (`/contact`), Privacy Policy (`/privacy`), Terms of Service (`/terms`), plus a 404 page.
+- Home includes the hero with the 20-years badge, a reviews section (first 3 testimonials + 4.9/5 from 46 reviews), FAQs, and the package pricing note. The Reviews page shows all testimonials. Testimonials are clients' own words — don't rewrite them into marketing copy.
+- Responsive mobile navigation, package-to-form links with URL query prefill (`?package=`, `?concern=`, `?method=`), accessible form labels/validation, loading/error/success states, page titles/descriptions/Open Graph metadata, and JSON-LD organization data on the home page.
+- Exact package prices and included items are held in one reusable data source (`packages`) in `src/App.tsx`.
+
+## Still outstanding before launch
+
+- [ ] Real business email in `business-config.json` (blocks form delivery)
+- [ ] Real domain in `sitemap.xml` / `robots.txt`
+- [ ] Privacy/Terms reviewed against actual business practices and applicable law
+- [ ] Optional: official Zoom booking URL in `business-config.json`
+- [ ] Test enquiry submitted and received on the live HTTPS site
 
 ## Project structure
 
 ```text
-src/                  React app, routes and styles
-public/               PHP endpoint, editable config, .htaccess, SEO files, favicon
-scripts/               Build packaging script
- dist/                 Vite production build (generated)
-deployment/public_html/ cPanel-ready compiled deployment copy (generated)
+src/                    React app (App.tsx = all pages/copy), routes and styles
+public/                 PHP endpoint, editable config, .htaccess, SEO files, favicon, images
+scripts/                Build packaging script (dist/ -> deployment/public_html/)
+dist/                   Vite production build (generated, git-ignored output of build)
+deployment/public_html/ cPanel-ready compiled deployment copy (generated by npm run build)
 ```
